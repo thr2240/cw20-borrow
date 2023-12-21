@@ -1,0 +1,33 @@
+[workspace]
+members = ["contracts/*"]
+
+[workspace.package]
+license = "BSD-3"
+authors = ["apollo <thomasr2240@gmail.com>"]
+edition = "2021"
+version = "0.0.1"
+
+[profile.release]
+codegen-units = 1
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+panic = 'abort'
+incremental = false
+overflow-checks = true
+
+[workspace.dependencies]
+cosmwasm-std = "1.1"
+cosmwasm-storage = "1.1"
+cosmwasm-schema = "1.1"
+
+cw-storage-plus = "0.15"
+cw2 = "0.15"
+cw20 = "0.15"
+cw20-base = "0.15"
+cw-multi-test = "0.15"
+
+thiserror = { version = "1" }
+cw-borrow = { version = "*", path = "contracts/" }
